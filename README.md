@@ -1,6 +1,7 @@
 # mycode (Project Title)
 
 Just getting started with python!
+Someone please help
 
 ## Getting Started
 
