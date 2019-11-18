@@ -1,0 +1,11 @@
+#!/bin/bash
+# fonefind -- find names using grep -i in ~/fone
+# v2 - ask if no entry $1
+if [ "$1" = "" ]
+ then
+  echo -n "Find what? : " ; read ANS
+ else
+  ANS="$1"
+fi
+grep -i "$ANS" ~/fone
+
