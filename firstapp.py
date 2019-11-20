@@ -1,31 +1,22 @@
+#!/usr/bin/#!/usr/bin/env python3
+
+
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class MyWindow(Gtk.Window):
+class LinkButtonWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.ScrolledWindow.__init__(self, title="Hello World")
+        Gtk.Window.__init__(self, title="Useful Site Information")
+        self.set_border_width(10)
 
-        self.box = Gtk.Box(spacing=10)
-        self.add(self.box)
 
-        self.button1 = Gtk.Button(label="Click Here")
-        self.button1.connect("clicked", self.on_button1_clicked)
-        self.box.pack_start(self.button1, True, True, 0)
+        button = Gtk.LinkButton("https://getfedora.org/", "Click Here for Fedora")
+        self.add(button)
 
-        self.button2 = Gtk.Button(label="Goodbye")
-        self.button2.connect("clicked", self.on_button2_clicked)
-        self.box.pack_start(self.button2, True, True, 0)
 
-    def on_button1_clicked(self, widget):
-        print("Hello World")
-        print("This is my first GUI app!")
-
-    def on_button2_clicked(self, widget):
-        print("I can't believe you did that!")
-
-win = MyWindow()
+win = LinkButtonWindow()
 win.connect("destroy", Gtk.main_quit)
 win.show_all()
 Gtk.main()

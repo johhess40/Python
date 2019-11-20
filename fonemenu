@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env python3
 # fonemenu -- display all fone programs in menu to select
 # v2 added view option
 while [ 1 ]
@@ -6,7 +6,7 @@ while [ 1 ]
  clear
  cat <<EOF
 ************************************************************
- 
+
 EOF
  echo -n \
   "Options [a|A]dd,[f|F]ind,[d|D]elete,[u|U]pdate,[v|V]iew,[q|Q]uit : "
@@ -22,5 +22,5 @@ EOF
 	 Q*|q*) exit 0 ;;
 	 *) echo "Try again, only [AaDdFfQq] based options available, press ENTER";;
  esac
- read NN 
+ read NN
 done
