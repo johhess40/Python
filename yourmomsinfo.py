@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+
 user_input1 = input("What is your address?:")
 user_input2 = input("What is your mothers maiden name?:")
 user_input3 = input("What is she cooking for dinner?:")
