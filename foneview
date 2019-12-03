@@ -1,7 +1,0 @@
-#!/bin/bash
-# foneview -- print to screen ~/fone
-# v1 - cat file to screen
-# v2 - ask if no entry $1
-less ~/fone #  control display
-exit
-

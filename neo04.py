@@ -8,7 +8,7 @@ NEO = "https://api.nasa.gov/neo/rest/v1/feed?api_key="
 
 
 def main():
-    with open(r"/home/john/mycode/mycreds.txt", "r") as nc:
+    with open(r"C:\Users\Student\Documents\GitHub\mycode\mycreds.txt", "r") as nc:
         myapikey = nc.read().rstrip("\n")
 
         print("****")
