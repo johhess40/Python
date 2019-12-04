@@ -3,6 +3,7 @@
 import argparse
 import time
 import hashlib
+import pprint
 
 import requests
 
@@ -13,8 +14,8 @@ XAVIER = 'http://gateway.marvel.com/v1/public/characters'
 # Marvel API wants md5 calc md5(ts+privateKey+publicKey)
 
 
-def hashbuilder(ts, pvkee, pubkee):
-    return hashlib.md5((ts + pvkee + pubkee).encode('utf-8')).hexdigest()
+def hashbuilder(takeabreak, pvkee, pubkee):
+    return hashlib.md5((takeabreak + pvkee + pubkee).encode('utf-8')).hexdigest()
 
 # Perform a call to MARVEL Character API
 # http://gateway.marvel.com/v1/public/characters
@@ -49,7 +50,7 @@ def main():
     uncannyxmen = marvelcharcall(nightcrawler, cerebro, storm, args.hero)
 
     # display results
-    print(uncannyxmen)
+    pprint.pprint(uncannyxmen)
 
 
 # Define arguments to collect
