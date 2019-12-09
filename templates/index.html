@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Johns Todo App</title>
+  </head>
+  <body>
+    <h1>Johns Todo List</h1>
+    <div>Add a new item to John's list:
+      <form action="/add" method="post">
+        <input type="text" name="todoitem">
+        <input type="submit">
+      </form>
+    </div>
+    <div>
+        <ul>
+        {% for todo in todos %}
+        <li style="font-size: 40pt"><input type="checkbox">{{ todo }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+  </body>
+</html>
