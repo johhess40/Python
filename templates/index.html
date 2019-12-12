@@ -7,17 +7,24 @@
   <body>
     <h1>Johns Todo List</h1>
     <div>Add a new item to John's list:
-      <form action="/add" method="post">
+      <form action="{{ url_for('add') }}" method="post">
         <input type="text" name="todoitem">
-        <input type="submit">
+        <input type="submit" value="Add To List">
       </form>
     </div>
     <div>
-        <ul>
-        {% for todo in todos %}
-        <li style="font-size: 40pt"><input type="checkbox">{{ todo }}</li>
-        {% endfor %}
-        </ul>
+          <h2>Yet To Be Done</h2>
+          <ul>
+            {% for todo in incomplete %}
+            <li style="font-size: 40pt">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}">Move To Done</a></li>
+            {% endfor %}
+          </ul>
+          <h2>Items Done</h2>
+            <ul>
+            {% for todo in complete %}
+            <li style="font-size: 40pt">{{ todo.text }}</li>
+            {% endfor %}
+          </ul>
     </div>
   </body>
 </html>
