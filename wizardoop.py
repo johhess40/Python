@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 
-class User:
+class User():
+    def __init__(self, email):
+        self.email = email
+
+
     def sign_in(self):
         print('Youre logged in')
 
 
 class Wizard(User):
-    def __init__(self, name, power):
+    def __init__(self, name, power, email):
+        User.__init__(self, email)
         self.name = name
         self.power = power
 
@@ -20,8 +25,7 @@ class Archer(User):
 
     def attack(self):
         print(f'Attacking with arrows!: Number of arrows left- {self.num_arrows}')
-wizard1 = Wizard("Merlin", 50)
+wizard1 = Wizard("Merlin", 50, "wizzy@gmail.com")
 archer1 = Archer("Robin", 200)
 
-for character in [wizard1, archer1]:
-    character.attack()
+print(wizard1.email)
